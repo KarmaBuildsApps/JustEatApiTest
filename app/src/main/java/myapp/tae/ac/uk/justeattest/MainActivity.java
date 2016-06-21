@@ -182,9 +182,9 @@ public class MainActivity extends AppCompatActivity implements JustEatView {
             Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
             List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 3);
             for (int i = 0; i < addresses.size(); i++) {
-                lastPostCode = addresses.get(i).getPostalCode();
-                if(lastPostCode.matches(Constants.POSTCODE_FORMAT)) {
-                    etSearch.setText(lastPostCode);
+                String postCode = addresses.get(i).getPostalCode();
+                if(postCode.matches(Constants.POSTCODE_FORMAT)) {
+                    etSearch.setText(postCode);
                     break;
                 }
             }
