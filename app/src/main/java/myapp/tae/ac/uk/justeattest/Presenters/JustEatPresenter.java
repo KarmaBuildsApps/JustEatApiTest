@@ -36,6 +36,7 @@ public class JustEatPresenter implements Observer {
             List<Restaurant> restaurants = dataService.getRestaurants();
             if(restaurants!=null){
                 view.updateRestaurantList(restaurants);
+                view.setLastDataAcquiredTime(System.currentTimeMillis());
             }
         }else if(Constants.DATA_FETCH_ERROR==(int) data){
             view.showRxError(R.string.error_rx);
@@ -66,7 +67,6 @@ public class JustEatPresenter implements Observer {
                 return null;
             }
         }
-
         view.setLastPostCode(postCode);
         view.showProgressDialog();
         return dataService.getRestaurantsByPostCode(postCode);
@@ -76,13 +76,10 @@ public class JustEatPresenter implements Observer {
     private long getSearchTimeDifference() {
         long lastDataAcquiredTime = view.getLastDataAcquiredTime();
         if(lastDataAcquiredTime==0){
-            lastDataAcquiredTime = SystemClock.currentThreadTimeMillis();
             return 0;
         }
-        long currentTime = SystemClock.currentThreadTimeMillis();
+        long currentTime = System.currentTimeMillis();
         long difference = currentTime-lastDataAcquiredTime;
-        lastDataAcquiredTime = currentTime;
-        view.setLastDataAcquiredTime(lastDataAcquiredTime);
         return difference;
     }
 
