@@ -15,5 +15,5 @@ public class Constants {
     public static final String FILTER_DATA_RATING = "FILTER_DATA_STAR_RATING";
     public static final String SEARCH_HISTORY_TIME = "SEARCH_HISTORY_TIME";
     public static final String SEARCH_HISTORY_POSTCODE = "SEARCH_HISTORY_POST_CODE";
-    public static final String POSTCODE_FORMAT = "^[a-zA-Z]\\w{1,3}\\s?\\d\\w[a-zA-Z]";
+    public static final String POSTCODE_FORMAT = "^[a-zA-Z]\\w{1,3}\\s?(\\d\\w[a-zA-Z]$)?";
 }
