@@ -250,6 +250,7 @@ public class MainActivity extends AppCompatActivity implements JustEatView {
             rbFilterRating.setRating(filterRating);
         if(!lastPostCode.isEmpty())
             etSearch.setText(lastPostCode);
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override
