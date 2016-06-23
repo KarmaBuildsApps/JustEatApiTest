@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements JustEatView {
         RatingBar.OnRatingBarChangeListener ratingBarChangeListener = new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                filterRating = (int) rating;
+                filterRating = rating;
                 if (!isFilterOn)
                     isFilterOn = !isFilterOn;
             }
