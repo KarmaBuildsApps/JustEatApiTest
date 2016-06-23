@@ -141,6 +141,10 @@ public class MainActivity extends AppCompatActivity implements JustEatView {
         rbFilterRating.setOnRatingBarChangeListener(ratingBarChangeListener);
     }
 
+    /**
+     * The method enable GPS and use Geocode to retrieve postcode
+     */
+
     private void configureLocationViews() {
         locationListener = new LocationListener() {
             @Override
